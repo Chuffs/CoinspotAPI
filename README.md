@@ -20,5 +20,4 @@ Some required files are missing, as they pose a security threat. To use this scr
 - With the Node.js server running, add the contents of the gscript.g file to the Google Spreadsheets Apps Script, making sure to change the URL of the node.js server.
 
 TO-DO
-- Google Script keeps failing on - 'TypeError: Cannot read property '0' of undefined'
 - Node.js logging, save each output/request as a seperate file to ease debugging

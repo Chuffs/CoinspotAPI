@@ -36,13 +36,14 @@ function cryptoUpdater() {
 
   var data = JSON.parse(result.getContentText());
 
-  for(let i = val_strt; i < (val_end - 1); i++) {
+	for(let i = val_strt; i < (val_end - 1); i++) {
     var coin = sheet.getRange('Cryptocurrency!' + coin_col_val + i).getValue();
-    var coinValue = data['coins'][0][coin][0];
-    sheet.getRange('Cryptocurrency!' + value_col_val + i).setValue(coinValue);
-    if(coin){
+    if(coin) {
+      var coinValue = data['coins'][0][coin][0];
+      sheet.getRange('Cryptocurrency!' + value_col_val + i).setValue(coinValue);
       Logger.log("Updating %s price: $%s", coin, coinValue);
     }
+
   }
 
     for(let i = bal_strt; i < (bal_end - 1); i++) {
