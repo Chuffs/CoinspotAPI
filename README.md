@@ -21,3 +21,5 @@ Some required files are missing, as they pose a security threat. To use this scr
 
 TO-DO
 - Node.js logging, save each output/request as a seperate file to ease debugging
+- Collecting and organizing Order History for better % gain/loss, can be done with V2 of CoinSpot API
+- Cleanup of Code/Optimization
