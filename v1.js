@@ -55,7 +55,8 @@ portfolio.get('/', async (req, res) => {
     // Receive list of coins that need updating
     const { sheets } = await authentication();
 
-    console.log("Incoming Request @ " + moment().format('yyyy-mm-dd:hh:mm:ss'));
+    var start = moment().format('yyyy-mm-dd:hh:mm:ss')
+    console.log("\x1b[32mIncoming Request @ %s\x1b[0m", start);
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: sheet_id,
@@ -130,7 +131,9 @@ portfolio.get('/', async (req, res) => {
       res.sendFile(txtPath);
     })
 
-    console.log("Completed Request @ " + moment().format('yyyy-mm-dd:hh:mm:ss'))
+    var finish = moment().format('yyyy-mm-dd:hh:mm:ss');
+    var time = finish - start;
+    console.log("Completed Request @ %s. Execution took: %s", finish, time);
 
   } catch(e) {
     console.log(e);
