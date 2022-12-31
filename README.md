@@ -6,7 +6,7 @@ The script will grab a list of watched coins from a google spreadsheet and then 
 Some required files are missing, as they pose a security threat. To use this script yourself you would need to do the following things;
 - Create a project on the Google Cloud Platform and request access to Google Sheets API for use with Node.js
 - Generate API access to your coinspot account. Details of the Coinspot API can be found here - https://www.coinspot.com.au/my/api. You will need full access to the account in order to access the balances of your coins.
-- Once Coinspot API access is obtained a json file with the following details will need to be created;
+- Once Coinspot API access is obtained a JSON file with the following details will need to be created;
 ```
 {
   "key": "#####", //Coinspot API Key
@@ -16,10 +16,14 @@ Some required files are missing, as they pose a security threat. To use this scr
 }
 ```
 
-- A Node.js server or device to run the script on your local network. I have deployed mine on a low powered Raspberry Pi Zero W and have port forwarded the appropriate port so that communication can be established.
+- A Node.js server or device to run the script on your local network - currently running with docker on unraid, with swag and cloudflare reverse proxy
 - With the Node.js server running, add the contents of the gscript.g file to the Google Spreadsheets Apps Script, making sure to change the URL of the node.js server.
 
 TO-DO
-- Node.js logging, save each output/request as a seperate file to ease debugging
-- Collecting and organizing Order History for better % gain/loss, can be done with V2 of CoinSpot API
-- Cleanup of Code/Optimization
+* Node.js logging, save each output/request as a seperate file to ease debugging
+* Collecting and organizing Order History for better % gain/loss, can be done with V2 of CoinSpot API
+* ~~Cleanup of Code/Optimization~~ DONE 31/12/2022
+  * Features to Add:
+    * Order History
+  * Further Optimization - proper async, rather than awaiting for the coinspot API response, send multiple.
+
